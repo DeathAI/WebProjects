@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="friends.js"></script>
+    <link rel="stylesheet" href="friends.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="name">
+                <label for="p1Name">Enter the Name :</label>
+                <input type="text" id="p1Name" value="player1">
+            </div>
+            <br>
+            <input type="file" id="player1">
+            <br>
+            <img id="player1Img" src="person.png">
+            <button class="buttons" onclick="p1Data()">Save</button>
+        </div>
+        <div class="box">
+            <div class="row">
+                <button id="one"  onclick="update(1)"></button> 
+                <button id="two" class="center" onclick="update(2)"></button>
+                <button id="three"  onclick="update(3)"></button>
+            </div>
+            <div class="row center_hor">
+                <button id="four" onclick="update(4)"></button> 
+                <button id="five" class="center" onclick="update(5)"></button>
+                <button id="six" onclick="update(6)"></button>
+            </div>
+            <div class="row">
+                <button id="seven"  onclick="update(7)"></button>
+                <button id="eight" class="center" onclick="update(8)"></button>
+                <button id="nine"  onclick="update(9)"></button>
+            </div>
+            <div class="row">
+                <div class="col"> <button class="buttons" onclick="back()">Back</button> </div>
+                <div class="col"> <button class="buttons" onclick="restart()">Restart</button> </div>
+                <div class="col"> <button class="buttons" onclick="next()">Next</button> </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="name">
+                <label for="p2Name">Enter the Name :</label>
+                <input type="text" id="p2Name" value="player2">
+            </div>
+            <br>
+            <input type="file" id="player2">
+            <img id="player2Img" src="person.png">
+            <button class="buttons" onclick="p2Data()">Save</button>
+        </div>
+    </div>
+
+    <div id="over">
+        <h1>Game is Over</h1>
+        <h2 id="winIndicator"></h2>
+    </div>
+
+</body>
+<script>
+    document.addEventListener('keydown', function(event) {
+        if(event.ctrlKey && event.key === 'z'){
+            back()
+        }
+        else if(event.ctrlKey && event.key === 'Z'){
+            next()
+        }
+    });
+
+    const player1 = document.getElementById('player1')
+    const img1 = document.getElementById('player1Img')
+    player1.addEventListener('input', function() {
+                                            const file = player1.files[0]
+                                            const reader = new FileReader()
+                                            reader.readAsDataURL(file)
+                                            reader.onload = function() {
+                                                                img1.src = reader.result
+                                                            }
+                                            player1.style.display = "none"
+                                        });                             
+
+    const player2 = document.getElementById('player2')
+    const img2 = document.getElementById('player2Img')
+    player2.addEventListener('input', function() {
+                                            const file = player2.files[0]
+                                            const reader = new FileReader()
+                                            reader.readAsDataURL(file)
+                                            reader.onload = function() {
+                                                                img2.src = reader.result
+                                                            }
+                                            player2.style.display = "none"
+                                        });
+</script>
+</html>
