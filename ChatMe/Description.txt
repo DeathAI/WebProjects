@@ -1,0 +1,24 @@
+Chat Me : it is a PHP Project devloped by Omi, Rishi, Aditya {035,037,038} which is just like a Whats App application
+
+to run this Project make a DataBase with Name : "chatme"
+and import chatme.sql file
+
+after you need to paste this folder in "C:\xampp\htdocs" path
+
+after you can run "http://localhost/chatme/" then you can sign up and sign in.
+
+after that you will redirect to the home.php page wich is main page and where you can chat with your friends but there will be no friends in starting
+
+you need to add friends for that you again need to create another account 
+
+log out can be done by clicking on our profile {first image on top-left cornner}
+
+after making few account you can make friends and using blue arrow you can open chat section 
+
+then you can easly chat with your friends using that textarea and green sending button
+
+[note : message will only appeaers when you reload webpage with clicking on Domain name and press Enter]
+
+
+
+Thank you
