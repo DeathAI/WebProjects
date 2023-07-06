@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Chess With Your Friends</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+</head>
+<body>
+    <div class="contain">
+        <div class="score">
+            <center><h2>Player1</h2></center>
+        </div>
+        <div class="numy y1">
+            <div style="height: 3%;"></div>
+            <div class="row"><p>A</p></div>
+            <div class="row"><p>B</p></div>
+            <div class="row"><p>C</p></div>
+            <div class="row"><p>D</p></div>
+            <div class="row"><p>E</p></div>
+            <div class="row"><p>F</p></div>
+            <div class="row"><p>G</p></div>
+            <div class="row"><p>H</p></div>
+        </div>
+        <div class="board">
+            <div class="row numx" style="height: 3%;">
+                <div class="white">1</div>
+                <div class="white">2</div>
+                <div class="white">3</div>
+                <div class="white">4</div>
+                <div class="white">5</div>
+                <div class="white">6</div>
+                <div class="white">7</div>
+                <div class="white">8</div>
+            </div>
+            <div class="row A">
+                <div class="border-left black"> <button id="A1" onclick="game.move('A1')"></button></div>
+                <div class="white">             <button id="A2" onclick="game.move('A2')"></button></div>
+                <div class="black">             <button id="A3" onclick="game.move('A3')"></button></div>
+                <div class="white">             <button id="A4" onclick="game.move('A4')"></button></div>
+                <div class="black">             <button id="A5" onclick="game.move('A5')"></button></div>
+                <div class="white">             <button id="A6" onclick="game.move('A6')"></button></div>
+                <div class="black">             <button id="A7" onclick="game.move('A7')"></button></div>
+                <div class="border-right white"><button id="A8" onclick="game.move('A8')"></button></div>
+            </div>
+            <div class="row B">
+                <div class="border-left white"> <button id="B1" onclick="game.move('B1')"></button></div>
+                <div class="black">             <button id="B2" onclick="game.move('B2')"></button></div>
+                <div class="white">             <button id="B3" onclick="game.move('B3')"></button></div>
+                <div class="black">             <button id="B4" onclick="game.move('B4')"></button></div>
+                <div class="white">             <button id="B5" onclick="game.move('B5')"></button></div>
+                <div class="black">             <button id="B6" onclick="game.move('B6')"></button></div>
+                <div class="white">             <button id="B7" onclick="game.move('B7')"></button></div>
+                <div class="border-right black"><button id="B8" onclick="game.move('B8')"></button></div>
+            </div>
+            <div class="row C">
+                <div class="border-left black"> <button id="C1" onclick="game.move('C1')"></button></div>
+                <div class="white">             <button id="C2" onclick="game.move('C2')"></button></div>
+                <div class="black">             <button id="C3" onclick="game.move('C3')"></button></div>
+                <div class="white">             <button id="C4" onclick="game.move('C4')"></button></div>
+                <div class="black">             <button id="C5" onclick="game.move('C5')"></button></div>
+                <div class="white">             <button id="C6" onclick="game.move('C6')"></button></div>
+                <div class="black">             <button id="C7" onclick="game.move('C7')"></button></div>
+                <div class="border-right white"><button id="C8" onclick="game.move('C8')"></button></div>
+            </div>
+            <div class="row D">
+                <div class="border-left white"> <button id="D1" onclick="game.move('D1')"></button></div>
+                <div class="black">             <button id="D2" onclick="game.move('D2')"></button></div>
+                <div class="white">             <button id="D3" onclick="game.move('D3')"></button></div>
+                <div class="black">             <button id="D4" onclick="game.move('D4')"></button></div>
+                <div class="white">             <button id="D5" onclick="game.move('D5')"></button></div>
+                <div class="black">             <button id="D6" onclick="game.move('D6')"></button></div>
+                <div class="white">             <button id="D7" onclick="game.move('D7')"></button></div>
+                <div class="border-right black"><button id="D8" onclick="game.move('D8')"></button></div>
+            </div>
+            <div class="row E">
+                <div class="border-left black"> <button id="E1"  onclick="game.move('E1')"></button></div>
+                <div class="white">             <button id="E2"  onclick="game.move('E2')"></button></div>
+                <div class="black">             <button id="E3"  onclick="game.move('E3')"></button></div>
+                <div class="white">             <button id="E4"  onclick="game.move('E4')"></button></div>
+                <div class="black">             <button id="E5"  onclick="game.move('E5')"></button></div>
+                <div class="white">             <button id="E6"  onclick="game.move('E6')"></button></div>
+                <div class="black">             <button id="E7"  onclick="game.move('E7')"></button></div>
+                <div class="border-right white"><button id="E8"  onclick="game.move('E8')"></button></div>
+            </div>
+            <div class="row F">
+                <div class="border-left white"> <button id="F1" onclick="game.move('F1')"></button></div>
+                <div class="black">             <button id="F2" onclick="game.move('F2')"></button></div>
+                <div class="white">             <button id="F3" onclick="game.move('F3')"></button></div>
+                <div class="black">             <button id="F4" onclick="game.move('F4')"></button></div>
+                <div class="white">             <button id="F5" onclick="game.move('F5')"></button></div>
+                <div class="black">             <button id="F6" onclick="game.move('F6')"></button></div>
+                <div class="white">             <button id="F7" onclick="game.move('F7')"></button></div>
+                <div class="border-right black"><button id="F8" onclick="game.move('F8')"></button></div>
+            </div>
+            <div class="row G">
+                <div class="border-left black"> <button id="G1" onclick="game.move('G1')"></button></div>
+                <div class="white">             <button id="G2" onclick="game.move('G2')"></button></div>
+                <div class="black">             <button id="G3" onclick="game.move('G3')"></button></div>
+                <div class="white">             <button id="G4" onclick="game.move('G4')"></button></div>
+                <div class="black">             <button id="G5" onclick="game.move('G5')"></button></div>
+                <div class="white">             <button id="G6" onclick="game.move('G6')"></button></div>
+                <div class="black">             <button id="G7" onclick="game.move('G7')"></button></div>
+                <div class="border-right white"><button id="G8" onclick="game.move('G8')"></button></div>
+            </div>
+            <div class="row H">
+                <div class="border-left white"> <button id="H1" onclick="game.move('H1')"></button></div>
+                <div class="black">             <button id="H2" onclick="game.move('H2')"></button></div>
+                <div class="white">             <button id="H3" onclick="game.move('H3')"></button></div>
+                <div class="black">             <button id="H4" onclick="game.move('H4')"></button></div>
+                <div class="white">             <button id="H5" onclick="game.move('H5')"></button></div>
+                <div class="black">             <button id="H6" onclick="game.move('H6')"></button></div>
+                <div class="white">             <button id="H7" onclick="game.move('H7')"></button></div>
+                <div class="border-right black"><button id="H8" onclick="game.move('H8')"></button></div>
+            </div>
+            <div class="row numx" style="height: 3%;">
+                <div class="white">1</div>
+                <div class="white">2</div>
+                <div class="white">3</div>
+                <div class="white">4</div>
+                <div class="white">5</div>
+                <div class="white">6</div>
+                <div class="white">7</div>
+                <div class="white">8</div>
+            </div>
+        </div>
+        <div class="numy y2">
+            <div style="height: 3%;"></div>
+            <div class="row"><p>A</p></div>
+            <div class="row"><p>B</p></div>
+            <div class="row"><p>C</p></div>
+            <div class="row"><p>D</p></div>
+            <div class="row"><p>E</p></div>
+            <div class="row"><p>F</p></div>
+            <div class="row"><p>G</p></div>
+            <div class="row"><p>H</p></div>
+        </div>
+        <div class="score">
+            <center><h2>Player2</h2></center>
+        </div>
+    </div>
+</body>
+
+<script src="script.js"></script>
+<script>
+    var game = new Game();
+</script>
+</html>
