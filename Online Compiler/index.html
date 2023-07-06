@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishlet</title>
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+  body{
+      background-color: #000 !important;
+      color:white !important;
+  }
+  .slider{
+      background-color: #000;
+      color:white ;
+      height: 100wh !important;
+      border: 1.3px solid white;
+  }
+  .nameBox{
+      background-color: #333 ;
+      color:white ;
+      /* border: 1.3px solid white; */
+  }
+  .decBox{
+      background-color: #222 ;
+      color:white ;
+      height: 100wh !important;
+      /* border: 1.3px solid white; */
+  }
+  .flex{
+      display: flex;
+      /* border: 1px solid white; */
+  }
+  *{
+      padding: 0;
+      margin: 0;
+  }
+  hr{
+      padding: 0;
+      margin: 0;
+  }
+  pre{
+      margin: 10px 20px;
+  }
+  li{
+      list-style: none;
+  }
+  .dropdown-item{
+      background-color: #fff;
+      color: #000;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Account</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="flex" style="height: 85vh;">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form onsubmit="event.preventDefault(); CreateProject();">
+            <div class="flex py-1">
+                <div class="col-4">Project Name : </div>
+                <input class="col-8 nameBox" id="name" placeholder="Project Name">
+            </div>
+            <div class="flex py-1">
+                <div class="col-4">Project Description : </div> 
+                <input class="col-8 decBox" id="decription" placeholder="Project Description">
+            </div>
+            <div class="flex py-1">
+                <div class="col-4">Project Language : </div> 
+                <select class="bg-dark text-light" name="Language" id="Language">
+                    <option value="cpp">C / C++</option>
+                    <option value="py">Python</option>
+                    <option value="java">Java</option>
+                    <option value="js">JavaScript</option>
+                </select><br>
+            </div>
+            <div class="py-1">
+                <center><button type="submit" class="btn btn-primary btn-sm">Create Project</button></center>
+            </div>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>
+</body>
+<script>
+    function CreateProject(){
+        let projectName = document.getElementById("name").value;
+        let language = document.getElementById("Language").value;
+        let decription = document.getElementById("decription").value;
+        localStorage.setItem(projectName,JSON.stringify({"language":language, "decription":decription}));
+        // alert(localStorage);
+        if(language == "cpp"){
+            window.location.href = "http://localhost:5000/exeCppCode";
+        }
+        else if(language == "py"){
+            window.location.href = "http://localhost:5000/exePyCode";
+        }
+        else if(language == "java"){
+            window.location.href = "http://localhost:5000/exeJavaCode";
+        }
+        else if(language == "js"){
+            window.location.href = "http://localhost:5000/exeJSCode";
+        }
+        else{
+            window.location.href = "http://localhost:5000/";
+        }
+    }
+</script>
+</html>
