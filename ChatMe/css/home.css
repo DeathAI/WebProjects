@@ -1,0 +1,379 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.contact-panel {
+  width: 25%;
+  background-color: #f2f2f2;
+  overflow-y: scroll;
+  height: 100%;
+  position: relative;
+  overflow-y: scroll;
+}
+
+.chat-panel {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.chat-container {
+  display: flex;
+  height: calc(100vh - 7vh);
+}
+
+.chat-list {
+  flex-basis: 25%;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.chat {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: red;
+  width: 100%;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search-bar input[type="submit"]{
+  flex-grow: 1;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  resize: none;
+  width: 20%;
+  align-self: flex-end;
+}
+
+.search-bar input[type="text"]{
+  flex-grow: 1;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  width: 80%;
+  resize: none;
+  align-self: flex-start;
+}
+
+.chat .active {
+  background-color: #000;
+  color: #fff;
+}
+
+.chat-avatar img {
+  margin-right: 10px;
+}
+
+.chat-time {
+  margin-left: 10px;
+  align-items: flex-end;
+}
+
+.chat-window {
+  flex-grow: 1;
+  margin-left: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 25%;
+  border-bottom: 1px solid #ccc;
+  height: 7vh;
+}
+.header{
+  display: flex;
+  background-color: rgb(255, 132, 0);
+  color: #fff;
+}
+
+.activity{
+  font-weight: bolder;
+  font-size: x-large;
+  background-color: #fff0;
+  border: none;
+  margin-left: 30px;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: calc(100% - 25%);
+  border-bottom: 1px solid #ccc;
+  height: 7vh;
+}
+
+
+.Bar{
+  display: none;
+}
+
+.contact-header img {
+  margin-right: 10px;
+  align-self: flex-start;
+}
+
+.chat-info {
+  flex-grow: 1;
+}
+
+.chat-info h2{
+  font-size: x-large;
+}
+
+.user-avatar img {
+  margin-right: 10px;
+}
+
+.chat-messages {
+  padding: 10px;
+  height: 90%;
+  overflow-y: scroll;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.message p {
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.message.received p {
+  background-color: #ebebeb;
+  align-self: flex-start;
+}
+
+.message.sent p {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+}
+
+.message.sent .time {
+  font-size: 12px;
+  color: #888;
+  align-self: flex-end;
+  margin-top: 5px;
+}
+
+.message.received .time {
+  font-size: 12px;
+  color: #888;
+  align-self: flex-start;
+  margin-top: 5px;
+}
+
+
+/* Additional styling to match web.whatsapp.com */
+.container,
+.contact-panel,
+.chat-panel {
+  box-sizing: border-box;
+}
+
+.contact-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contact-panel::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.contact-panel::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.chat-messages:-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  position: fixed;
+  bottom: 0px;
+  height: 10%;
+  width: 75%;
+}
+
+.chat-input textarea {
+  flex-grow: 1;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  border-radius: 5px;
+  /* background-color: #fff; */
+  resize: none;
+}
+
+.chat-input textarea:focus {
+  outline: none;
+  background-color: #fff;
+}
+
+.chat-input textarea~label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  color: #888;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.chat-input textarea:focus~label,
+.chat-input textarea:not(:placeholder-shown)~label {
+  transform: translateY(-15px);
+  font-size: 10px;
+  color: #555;
+}
+
+.chat-input button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Media Queries for Responsiveness */
+
+@media screen and (max-width: 600px) {
+  .chat-container {
+    flex-direction: column;
+  }
+
+  .chat-list,
+  .chat-window {
+    margin: 0;
+    margin-top: 20px;
+  }
+}
+
+.add-friend{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+/* Media query for medium-sized screens */
+@media screen and (max-width: 1350px) {
+  .contact-panel, .contact-header {
+    width: 35%;
+  }
+  .chat-panel, .chat-header{
+    width: 65%;
+  }
+  .search-bar input[type="text"]{
+    width: 20vw;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+	.activity{
+    margin-left: 00px;
+  }
+}
+@media screen and (max-width: 945px) {
+  .contact-panel, .contact-header {
+    width: 35%;
+  }
+  .chat-panel, .chat-header{
+    width: 65%;
+  }
+}
+@media screen and (max-width: 656px) {
+  .Bar{
+    display: block;
+    margin: auto;
+    margin-right: 5%;
+    cursor:pointer;
+  }
+  .contact-panel, .contact-header {
+    display: none;
+    width: 100vw;
+  }
+  .chat-header{
+    width: 95vh;
+  }
+  .chat-input,.chat-panel,.contact-panel{
+    width: 100vw;
+  }
+  .chat-header, .chat-input,.contact-header{
+    height: 10vh;
+  }
+  .chat-panel, .contact-panel {
+    height: 90vh;
+  }
+  .activity,.user-avatar{
+    width: 15%;
+  }
+  .contact-header{
+    width: 70%;
+  }
+}
+.user-name{
+  display: inline;
+  flex-grow: 1;
+  align-self: flex-end;
+}
+
+.btn{
+  display: inline;
+}
