@@ -129,4 +129,5 @@ async def Stock_List(ctx,friend=""):
     await ctx.send(user.mention)
 
 DiscordTocken = "" # I cannot provide my token because if I write it here immediately, it will be changed by Discord.
+# You can get it on https://discord.com/developers/applications/
 bot.run(DiscordTocken)
