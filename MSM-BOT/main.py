@@ -128,5 +128,5 @@ async def Stock_List(ctx,friend=""):
     await ctx.send(file=image)
     await ctx.send(user.mention)
 
-    
-bot.run('MTA5NzIzNDQxNDA0MTMxNzM3Ng.Ga0Vgm.shbOsmE32QkR5cptQ-ba2BIapbuc-sOylmJpsc')
+DiscordTocken = "" # I cannot provide my token because if I write it here immediately, it will be changed by Discord.
+bot.run(DiscordTocken)
